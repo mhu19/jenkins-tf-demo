@@ -11,7 +11,7 @@ module "bastion_host" {
   region  = var.region
   zone    = var.zone
   
-  network = google_compute_network.network.self_link
+  network = google_compute_network.vpc_network.self_link
   subnet = google_compute_subnetwork.subnet.self_link
   members = ["jenkins-sa@crack-mix-350403.iam.gserviceaccount.com"]
 }
