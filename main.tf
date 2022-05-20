@@ -17,7 +17,7 @@ resource "google_sql_database_instance" "database" {
   settings {
     tier = "db-f1-micro"
   }
-  deletion_protection = false
+  
 }
 
 resource "google_container_cluster" "primary" {
@@ -35,7 +35,7 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
   node_config {
     preemptible = true
     machine_type = "e2-medium"
-    service_account = google_service_account.default.email
+    service_account = "jenkins-sa@crack-mix-350403.iam.gserviceaccount.com"
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]
