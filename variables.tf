@@ -1,5 +1,5 @@
 variable "project" { 
-  default = "My First Project"
+  default = "crack-mix-350403"
 }
 
 variable "region" {
